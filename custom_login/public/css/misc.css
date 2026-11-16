@@ -854,3 +854,170 @@
             transparent !important;
     }
 }
+
+html[data-theme="dark"] .main-section {
+    background:
+        radial-gradient(circle at 92% 0%, rgba(196, 63, 157, 0.14), transparent 35%),
+        radial-gradient(circle at 5% 100%, rgba(73, 59, 145, 0.20), transparent 38%),
+        linear-gradient(135deg, #0f0e14 0%, #121016 55%, #0d0c12 100%) !important;
+}
+
+html[data-theme="dark"] .main-section .page-head {
+    background: var(--bg-color, #171717) !important;
+    border-bottom-color: var(--border-color, #2d2938) !important;
+    backdrop-filter: none !important;
+}
+
+html[data-theme="dark"] .main-section .title-text,
+html[data-theme="dark"] .main-section .form-section .section-head,
+html[data-theme="dark"] .main-section .form-section .section-head .section-title,
+html[data-theme="dark"] .main-section .frappe-control .label,
+html[data-theme="dark"] .main-section .frappe-control .control-label,
+html[data-theme="dark"] .main-section .widget-title,
+html[data-theme="dark"] .main-section .widget-label,
+html[data-theme="dark"] .main-section .section-title,
+html[data-theme="dark"] .main-section .section-head h3,
+html[data-theme="dark"] .main-section .section-head h4,
+html[data-theme="dark"] .main-section .number,
+html[data-theme="dark"] .main-section .stat-value,
+html[data-theme="dark"] .main-section .value,
+html[data-theme="dark"] .main-section .control-value,
+html[data-theme="dark"] .main-section .checkbox label,
+html[data-theme="dark"] .main-section .checkbox-label,
+html[data-theme="dark"] .main-section .check-label,
+html[data-theme="dark"] .main-section .checkbox label span {
+    color: var(--text-color, #f8f8f8) !important;
+}
+
+html[data-theme="dark"] .main-section .breadcrumb {
+    color: var(--text-muted, #a8a2b8) !important;
+}
+
+html[data-theme="dark"] .main-section .breadcrumb a,
+html[data-theme="dark"] .main-section a {
+    color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .main-section a:hover {
+    color: #e9d5ff !important;
+}
+
+html[data-theme="dark"] .main-section .form-section {
+    background: rgba(255, 255, 255, 0.03) !important;
+}
+
+html[data-theme="dark"] .main-section input.form-control,
+html[data-theme="dark"] .main-section textarea.form-control,
+html[data-theme="dark"] .main-section select.form-control,
+html[data-theme="dark"] .main-section .control-input,
+html[data-theme="dark"] .main-section .control-input input,
+html[data-theme="dark"] .main-section .control-input textarea,
+html[data-theme="dark"] .main-section .control-input select,
+html[data-theme="dark"] .main-section .link-field,
+html[data-theme="dark"] .main-section .link-field input,
+html[data-theme="dark"] .main-section .input-with-feedback,
+html[data-theme="dark"] .main-section select {
+    background: var(--control-bg, #1c1a24) !important;
+    border-color: var(--border-color, #2d2938) !important;
+    color: var(--text-color, #f8f8f8) !important;
+}
+
+html[data-theme="dark"] .main-section input::placeholder,
+html[data-theme="dark"] .main-section textarea::placeholder,
+html[data-theme="dark"] .main-section .form-control::placeholder {
+    color: var(--text-muted, #a8a2b8) !important;
+}
+
+html[data-theme="dark"] .main-section input.form-control:focus,
+html[data-theme="dark"] .main-section textarea.form-control:focus,
+html[data-theme="dark"] .main-section select.form-control:focus,
+html[data-theme="dark"] .main-section .control-input:focus-within,
+html[data-theme="dark"] .main-section .link-field:focus-within {
+    border-color: #c4b5fd !important;
+    box-shadow: 0 0 0 2px rgba(196, 181, 253, 0.15) !important;
+}
+
+html[data-theme="dark"] .main-section .btn-default,
+html[data-theme="dark"] .main-section .btn-secondary,
+html[data-theme="dark"] .main-section .btn-light {
+    background: var(--control-bg, #1c1a24) !important;
+    border-color: var(--border-color, #2d2938) !important;
+    color: var(--text-color, #f8f8f8) !important;
+}
+
+html[data-theme="dark"] .main-section .btn-default:hover,
+html[data-theme="dark"] .main-section .btn-secondary:hover,
+html[data-theme="dark"] .main-section .btn-light:hover {
+    background: #262331 !important;
+    color: #f8f8f8 !important;
+}
+
+html[data-theme="dark"] .main-section .widget,
+html[data-theme="dark"] .main-section .dashboard-widget-box,
+html[data-theme="dark"] .main-section .chart-container,
+html[data-theme="dark"] .main-section .card {
+    background: var(--card-bg, #171717) !important;
+    border-color: var(--border-color, #2d2938) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35) !important;
+}
+
+html[data-theme="dark"] .main-section .list-row-container,
+html[data-theme="dark"] .main-section .list-row {
+    background: var(--card-bg, #171717) !important;
+    border-color: var(--border-color, #2d2938) !important;
+}
+
+html[data-theme="dark"] .main-section .list-row:hover {
+    background: #211d2c !important;
+}
+
+html[data-theme="dark"] .main-section .list-row,
+html[data-theme="dark"] .main-section .list-row .list-row-col,
+html[data-theme="dark"] .main-section .list-row .list-subject {
+    color: var(--text-color, #f8f8f8) !important;
+    transition: none !important;
+}
+
+html[data-theme="dark"] .main-section .list-row-head {
+    background: #211d2c !important;
+    color: #b9b2cc !important;
+    transition: none !important;
+}
+
+html[data-theme="dark"] .main-section .list-row-head * {
+    color: #b9b2cc !important;
+    transition: none !important;
+}
+
+html[data-theme="dark"] .main-section .dropdown-menu {
+    background: var(--popover-bg, #23212c) !important;
+    border-color: var(--border-color, #2d2938) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+html[data-theme="dark"] .main-section .dropdown-item {
+    color: var(--text-color, #f8f8f8) !important;
+}
+
+html[data-theme="dark"] .main-section .dropdown-item:hover {
+    background: #2b2838 !important;
+    color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .main-section .badge {
+    background: rgba(76, 29, 149, 0.45) !important;
+    color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .main-section hr {
+    border-color: var(--border-color, #2d2938) !important;
+}
+
+html[data-theme="dark"] .main-section .frappe-control .reqd {
+    color: #f9a8d4 !important;
+}
+
+html[data-theme="dark"] .main-section input[type="checkbox"],
+html[data-theme="dark"] .main-section .checkbox input[type="checkbox"] {
+    accent-color: #c4b5fd !important;
+}

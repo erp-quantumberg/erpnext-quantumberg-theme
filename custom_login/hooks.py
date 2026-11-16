@@ -23,11 +23,13 @@ app_include_css = [
     # "/assets/custom_login/css/dashboard.css",
     # "/assets/custom_login/css/charts.css",
      "/assets/custom_login/css/misc.css",
+     "/assets/custom_login/css/dark_theme.css",
     # "/assets/custom_login/css/erpnext_overrides.css",
 ]
 
 app_include_js = [
-    "/assets/custom_login/js/custom_desktop_icons.js"
+    "/assets/custom_login/js/custom_desktop_icons.js",
+    "/assets/custom_login/js/theme_toggle.js"
 ]
 # app_include_css = "/assets/custom_login/css/morphosis_theme.css"
 # Apps
