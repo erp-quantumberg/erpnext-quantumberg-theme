@@ -28,8 +28,7 @@ app_include_css = [
 ]
 
 app_include_js = [
-    "/assets/custom_login/js/custom_desktop_icons.js",
-    "/assets/custom_login/js/theme_toggle.js"
+    "/assets/custom_login/js/custom_desktop_icons.js"
 ]
 # app_include_css = "/assets/custom_login/css/morphosis_theme.css"
 # Apps

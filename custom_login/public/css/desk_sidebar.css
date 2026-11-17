@@ -561,3 +561,11 @@ body:has(.workspace) .workspace-shortcuts::-webkit-scrollbar-track {
 .notification-list-container * {
     text-shadow: none !important;
 }
+
+body:has(.workspace) .workspace-shortcuts {
+    display: none !important;
+}
+
+body:has(.workspace) .workspace {
+    margin-left: 0 !important;
+}

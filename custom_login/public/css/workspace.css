@@ -164,25 +164,20 @@ body[data-route="desk"] .shortcut-widget-box:hover {
     opacity: 0.70 !important;
 }
 
-/* ==========================================================
-   MOBILE RESPONSIVE WORKSPACE SIDEBAR
-   ========================================================== */
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.98px) {
 
     body:has(.workspace) .workspace-shortcuts {
         display: none !important;
     }
 
-    body:has(.workspace) .workspace {
-        margin-left: 0 !important;
-        width: 100% !important;
-    }
-
+    body:has(.workspace) .workspace,
     body:has(.workspace) .workspace-page,
     body:has(.workspace) .workspace-body {
-        width: 100% !important;
         margin-left: 0 !important;
+        width: 100% !important;
     }
 
+    .body-sidebar-container .body-sidebar {
+        box-sizing: border-box !important;
+    }
 }
