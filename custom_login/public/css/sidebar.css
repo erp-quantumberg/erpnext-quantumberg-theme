@@ -238,3 +238,111 @@
     background:
         #453D89 !important;
 }
+
+@media screen and (max-width: 767.98px) {
+
+    :root {
+        --sidebar-width: min(280px, 78vw) !important;
+        --st-sidebar-width: min(280px, 78vw) !important;
+    }
+
+    html body .body-sidebar-container:not(.expanded) {
+        width: 0 !important;
+        min-width: 0 !important;
+    }
+
+    html body .body-sidebar-container:not(.expanded) .body-sidebar {
+        display: flex !important;
+        visibility: hidden !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        width: 0 !important;
+        min-width: 0 !important;
+        max-width: 0 !important;
+        height: 100vh !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    }
+
+    html body .body-sidebar-container:not(.expanded) .body-sidebar-placeholder {
+        display: none !important;
+        width: 0 !important;
+        min-width: 0 !important;
+    }
+
+    html body .body-sidebar-container:not(.expanded) .overlay {
+        display: none !important;
+    }
+
+    html body .body-sidebar-container.expanded {
+        position: relative !important;
+        width: 0 !important;
+        min-width: 0 !important;
+    }
+
+    html body .body-sidebar-container.expanded .body-sidebar {
+        display: flex !important;
+        visibility: visible !important;
+        position: fixed !important;
+        left: 0 !important;
+        right: auto !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: var(--sidebar-width, 280px) !important;
+        min-width: 0 !important;
+        max-width: 78vw !important;
+        height: 100vh !important;
+        padding: 8px 8px 10px !important;
+        margin: 0 !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+        z-index: 1020 !important;
+    }
+
+    html body .body-sidebar-container.expanded .body-sidebar-placeholder {
+        display: block !important;
+        width: 0 !important;
+        min-width: 0 !important;
+    }
+
+    html body .body-sidebar-container.expanded .overlay {
+        display: block !important;
+        position: fixed !important;
+        left: var(--sidebar-width, 280px) !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: calc(100vw - var(--sidebar-width, 280px)) !important;
+        height: 100vh !important;
+        z-index: 1021 !important;
+    }
+
+    html body .page-title .sidebar-toggle-btn {
+        display: flex !important;
+        visibility: visible !important;
+    }
+
+    html body .main-section {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    html body #body,
+    html body .page-container,
+    html body .page-content,
+    html body .layout-main-section {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+}
