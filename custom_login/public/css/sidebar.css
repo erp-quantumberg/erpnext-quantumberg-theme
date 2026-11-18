@@ -243,7 +243,6 @@
 
     :root {
         --sidebar-width: min(280px, 78vw) !important;
-        --st-sidebar-width: min(280px, 78vw) !important;
     }
 
     html body .body-sidebar-container:not(.expanded) {
@@ -254,27 +253,22 @@
     html body .body-sidebar-container:not(.expanded) .body-sidebar {
         display: flex !important;
         visibility: hidden !important;
-        position: relative !important;
-        left: auto !important;
+        position: absolute !important;
+        left: 0 !important;
         right: auto !important;
-        top: auto !important;
-        width: 0 !important;
-        min-width: 0 !important;
-        max-width: 0 !important;
+        top: 0 !important;
+        width: var(--sidebar-width, 280px) !important;
+        max-width: 78vw !important;
         height: 100vh !important;
-        padding: 0 !important;
+        height: 100dvh !important;
+        padding: 8px 8px 10px !important;
         margin: 0 !important;
         overflow: hidden !important;
         transform: none !important;
         box-sizing: border-box !important;
     }
 
-    html body .body-sidebar-container:not(.expanded) .body-sidebar-placeholder {
-        display: none !important;
-        width: 0 !important;
-        min-width: 0 !important;
-    }
-
+    html body .body-sidebar-container:not(.expanded) .body-sidebar-placeholder,
     html body .body-sidebar-container:not(.expanded) .overlay {
         display: none !important;
     }
@@ -287,6 +281,7 @@
 
     html body .body-sidebar-container.expanded .body-sidebar {
         display: flex !important;
+        flex-direction: column !important;
         visibility: visible !important;
         position: fixed !important;
         left: 0 !important;
@@ -297,13 +292,13 @@
         min-width: 0 !important;
         max-width: 78vw !important;
         height: 100vh !important;
+        height: 100dvh !important;
         padding: 8px 8px 10px !important;
         margin: 0 !important;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
+        overflow: visible !important;
         transform: none !important;
         box-sizing: border-box !important;
-        z-index: 1020 !important;
+        z-index: 1030 !important;
     }
 
     html body .body-sidebar-container.expanded .body-sidebar-placeholder {
@@ -321,6 +316,7 @@
         bottom: 0 !important;
         width: calc(100vw - var(--sidebar-width, 280px)) !important;
         height: 100vh !important;
+        height: 100dvh !important;
         z-index: 1021 !important;
     }
 
@@ -346,35 +342,43 @@
         max-width: 100% !important;
     }
 
-    html body .body-sidebar-container.expanded .body-sidebar {
-        overflow: visible !important;
-    }
-
     html body .body-sidebar-container.expanded .body-sidebar .body-sidebar-top {
         flex: 1 1 auto !important;
         min-height: 0 !important;
+        position: relative !important;
         overflow-x: hidden !important;
         overflow-y: auto !important;
+    }
+
+    html body .body-sidebar-container.expanded .body-sidebar .body-sidebar-cards {
+        flex: 0 0 auto !important;
+        overflow: visible !important;
     }
 
     html body .body-sidebar-container.expanded .body-sidebar .body-sidebar-bottom {
         flex: 0 0 auto !important;
         margin-top: auto !important;
         position: relative !important;
-        z-index: 1025 !important;
+        z-index: 1045 !important;
         overflow: visible !important;
         width: 100% !important;
-        padding: 0 !important;
+        min-height: 48px !important;
+        padding: 0 4px 4px !important;
+        pointer-events: auto !important;
     }
 
-    html body .body-sidebar-container.expanded .body-sidebar .body-sidebar-bottom .dropdown-navbar-user {
+    html body .body-sidebar-container.expanded .body-sidebar .body-sidebar-bottom .dropdown-navbar-user,
+    html body .body-sidebar-container.expanded .body-sidebar .body-sidebar-bottom .dropdown-navbar-user.dropdown {
         display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
         flex: 0 0 auto !important;
         margin: 0 !important;
-        padding: 0 !important;
+        padding: 4px 0 !important;
         overflow: visible !important;
         position: relative !important;
-        z-index: 1026 !important;
+        z-index: 1045 !important;
+        pointer-events: auto !important;
     }
 
     html body .body-sidebar-container.expanded .body-sidebar .sidebar-user-button {
@@ -386,28 +390,46 @@
         padding: 6px 8px !important;
         overflow: visible !important;
         border-radius: 10px !important;
+        pointer-events: auto !important;
     }
 
     html body .body-sidebar-container.expanded .body-sidebar .sidebar-user-button .avatar {
+        display: inline-flex !important;
         flex: 0 0 32px !important;
         width: 32px !important;
         height: 32px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     html body .body-sidebar-container.expanded .body-sidebar .sidebar-user-button .avatar-name-email {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+        flex: 1 1 auto !important;
         min-width: 0 !important;
         max-width: calc(100% - 40px) !important;
+        margin-left: 8px !important;
+        overflow: hidden !important;
     }
 
-    html body .frappe-menu.context-menu {
-        z-index: 1040 !important;
+    html body .body-sidebar-container.expanded .body-sidebar .sidebar-user-button .avatar-name-email span {
+        display: block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
     }
 
-    html body .body-sidebar-container.expanded .body-sidebar .body-sidebar-bottom .dropdown-menu,
-    html body .body-sidebar-container.expanded .body-sidebar .body-sidebar-bottom .frappe-menu {
-        z-index: 1040 !important;
+    html body .frappe-menu.context-menu,
+    html body .es-menu {
+        position: fixed !important;
+        z-index: 1060 !important;
+        max-width: calc(100vw - 16px) !important;
+        color: var(--ink-gray-8, #321247) !important;
+    }
+
+    html body .frappe-menu.context-menu *,
+    html body .es-menu * {
+        color: inherit !important;
     }
 }
