@@ -67,8 +67,19 @@
    ========================================================== */
 
 .body-sidebar .standard-sidebar-item:hover,
+.body-sidebar .standard-sidebar-item:focus-within,
+.body-sidebar .standard-sidebar-item:active,
 .body-sidebar .sidebar-item:hover,
-.body-sidebar .tree-link:hover {
+.body-sidebar .sidebar-item:focus-within,
+.body-sidebar .tree-link:hover,
+.body-sidebar .tree-link:focus-within,
+.body-sidebar .sidebar-item-container:hover,
+.body-sidebar .dropdown-menu-item:hover,
+.body-sidebar .dropdown-menu-item:focus-within,
+.body-sidebar .dropdown-navbar-user:hover,
+.body-sidebar .sidebar-user-button:hover,
+.body-sidebar .sidebar-user-button:focus-visible,
+.body-sidebar .sidebar-user-button[aria-expanded="true"] {
 
     background:
         rgba(255, 255, 255, 0.12) !important;
@@ -113,17 +124,54 @@
 
 
 /* ==========================================================
-   ICONS
+   SIDEBAR HEADER STATES
    ========================================================== */
 
-.body-sidebar svg,
-.body-sidebar .icon {
+.body-sidebar .sidebar-header:hover,
+.body-sidebar .sidebar-header:focus-visible,
+.body-sidebar .sidebar-header.hover,
+.body-sidebar .sidebar-header.active-sidebar {
+
+    background:
+        rgba(255, 255, 255, 0.12) !important;
 
     color:
         #FFFFFF !important;
 
-    stroke:
+    text-decoration:
+        none !important;
+}
+
+.body-sidebar .sidebar-header:hover *,
+.body-sidebar .sidebar-header:focus-visible *,
+.body-sidebar .sidebar-header.hover *,
+.body-sidebar .sidebar-header.active-sidebar * {
+
+    color:
         #FFFFFF !important;
+}
+
+
+/* ==========================================================
+   ICONS
+   ========================================================== */
+
+.body-sidebar svg,
+.body-sidebar .icon,
+.body-sidebar .icon-container svg,
+.body-sidebar .frappe-menu-item-icon svg {
+
+    color:
+        var(--qb-sidebar-icon, #FFFFFF) !important;
+
+    --icon-stroke:
+        currentColor !important;
+}
+
+.body-sidebar .icon {
+
+    stroke:
+        currentColor !important;
 }
 
 
@@ -432,4 +480,68 @@
     html body .es-menu * {
         color: inherit !important;
     }
+}
+
+
+/* ==========================================================
+   SIDEBAR GENERATED MENUS
+   ========================================================== */
+
+body:has(.body-sidebar .sidebar-header.active-sidebar) .frappe-menu.context-menu,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .es-menu,
+body:has(.body-sidebar .sidebar-user-button[aria-expanded="true"]) .es-menu {
+
+    background:
+        var(--qb-primary-dark, #3A3375) !important;
+
+    border-color:
+        rgba(255, 255, 255, 0.18) !important;
+}
+
+body:has(.body-sidebar .sidebar-header.active-sidebar) .frappe-menu.context-menu,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .frappe-menu.context-menu *,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .es-menu,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .es-menu *,
+body:has(.body-sidebar .sidebar-user-button[aria-expanded="true"]) .es-menu,
+body:has(.body-sidebar .sidebar-user-button[aria-expanded="true"]) .es-menu * {
+
+    color:
+        var(--qb-sidebar-icon, #FFFFFF) !important;
+}
+
+body:has(.body-sidebar .sidebar-header.active-sidebar) .frappe-menu.context-menu .icon,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .frappe-menu.context-menu svg,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .es-menu .icon,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .es-menu svg,
+body:has(.body-sidebar .sidebar-user-button[aria-expanded="true"]) .es-menu .icon,
+body:has(.body-sidebar .sidebar-user-button[aria-expanded="true"]) .es-menu svg {
+
+    color:
+        var(--qb-sidebar-icon, #FFFFFF) !important;
+
+    --icon-stroke:
+        currentColor !important;
+}
+
+body:has(.body-sidebar .sidebar-header.active-sidebar) .frappe-menu.context-menu .icon,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .es-menu .icon,
+body:has(.body-sidebar .sidebar-user-button[aria-expanded="true"]) .es-menu .icon {
+
+    stroke:
+        currentColor !important;
+}
+
+body:has(.body-sidebar .sidebar-header.active-sidebar) .frappe-menu.context-menu .dropdown-menu-item:hover,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .frappe-menu.context-menu .dropdown-menu-item:focus-within,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .frappe-menu.context-menu .dropdown-menu-item:active,
+body:has(.body-sidebar .sidebar-header.active-sidebar) .es-menu .es-menu__item[data-highlighted],
+body:has(.body-sidebar .sidebar-header.active-sidebar) .es-menu .es-menu__item:active,
+body:has(.body-sidebar .sidebar-user-button[aria-expanded="true"]) .es-menu .es-menu__item[data-highlighted],
+body:has(.body-sidebar .sidebar-user-button[aria-expanded="true"]) .es-menu .es-menu__item:active {
+
+    background:
+        var(--qb-primary-light, #673AB7) !important;
+
+    color:
+        var(--qb-sidebar-icon, #FFFFFF) !important;
 }
