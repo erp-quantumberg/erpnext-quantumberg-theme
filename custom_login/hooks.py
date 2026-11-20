@@ -1,3 +1,5 @@
+from pathlib import Path
+
 app_name = "custom_login"
 app_title = "Custom Login"
 app_publisher = "manohar"
@@ -6,25 +8,49 @@ app_email = "manohar.kariyappa@gmail.com"
 app_license = "mit"
 
 
+_CSS_DIR = Path(__file__).parent / "public" / "css"
+
+_CSS_VERSION = max(
+    (
+        int((_CSS_DIR / name).stat().st_mtime)
+        for name in (
+            "variables.css",
+            "sidebar.css",
+            "workspace.css",
+            "desk_sidebar.css",
+            "buttons.css",
+            "misc.css",
+            "dark_theme.css",
+        )
+        if (_CSS_DIR / name).exists()
+    ),
+    default=1,
+)
+
+
+def _css(name):
+    return f"/assets/custom_login/css/{name}?v={_CSS_VERSION}"
+
+
 after_install = "custom_login.custom_login.install.after_install"
 app_include_css = [
-     "/assets/custom_login/css/variables.css",
-    # "/assets/custom_login/css/navbar.css",
-      "/assets/custom_login/css/sidebar.css",
-    "/assets/custom_login/css/workspace.css",
-     "/assets/custom_login/css/desk_sidebar.css",
-     "/assets/custom_login/css/buttons.css",
-    # "/assets/custom_login/css/form.css",
-    # "/assets/custom_login/css/datatable.css",
-    # "/assets/custom_login/css/dialogs.css",
-    # "/assets/custom_login/css/reports.css",
-    # "/assets/custom_login/css/calendar.css",
-    # "/assets/custom_login/css/kanban.css",
-    # "/assets/custom_login/css/dashboard.css",
-    # "/assets/custom_login/css/charts.css",
-     "/assets/custom_login/css/misc.css",
-     "/assets/custom_login/css/dark_theme.css",
-    # "/assets/custom_login/css/erpnext_overrides.css",
+    _css("variables.css"),
+    # _css("navbar.css"),
+    _css("sidebar.css"),
+    _css("workspace.css"),
+    _css("desk_sidebar.css"),
+    _css("buttons.css"),
+    # _css("form.css"),
+    # _css("datatable.css"),
+    # _css("dialogs.css"),
+    # _css("reports.css"),
+    # _css("calendar.css"),
+    # _css("kanban.css"),
+    # _css("dashboard.css"),
+    # _css("charts.css"),
+    _css("misc.css"),
+    _css("dark_theme.css"),
+    # _css("erpnext_overrides.css"),
 ]
 
 app_include_js = [

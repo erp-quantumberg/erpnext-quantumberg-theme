@@ -1021,3 +1021,210 @@ html[data-theme="dark"] .main-section input[type="checkbox"],
 html[data-theme="dark"] .main-section .checkbox input[type="checkbox"] {
     accent-color: #c4b5fd !important;
 }
+
+:root {
+    --desk-primary-deep: #3B2F6E;
+    --desk-primary: #5B45A8;
+    --desk-accent: #C8499A;
+    --desk-glass: rgba(255, 255, 255, 0.88);
+    --desk-stroke: rgba(255, 255, 255, 0.92);
+    --desk-radius: 18px;
+    --desk-shadow: 0 18px 40px -20px rgba(59, 47, 110, 0.5);
+    --desk-shadow-hover: 0 26px 50px -20px rgba(59, 47, 110, 0.6);
+}
+
+.navbar {
+    background: linear-gradient(105deg, #3B2F6E 0%, #5B45A8 46%, #A23E93 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.28) !important;
+    box-shadow: 0 10px 30px -14px rgba(59, 47, 110, 0.55) !important;
+    color: #fff !important;
+}
+
+.navbar a,
+.navbar button,
+.navbar .nav-link,
+.navbar .navbar-home,
+.navbar .navbar-text,
+.navbar .dropdown-toggle {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.navbar a:hover,
+.navbar button:hover,
+.navbar .nav-link:hover,
+.navbar .dropdown-toggle:hover {
+    color: #fff !important;
+}
+
+.navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #fff !important;
+}
+
+.navbar .search-bar,
+.navbar .form-control,
+.navbar .input-group,
+.navbar [data-fieldname="search"] {
+    background: rgba(255, 255, 255, 0.16) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 999px !important;
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
+.navbar .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.navbar .dropdown-menu {
+    color: var(--text-color) !important;
+    background: var(--card-bg, #fff) !important;
+    border: 1px solid var(--border-color, #e8e3ef) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 18px 40px -16px rgba(59, 47, 110, 0.35) !important;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+    color: var(--text-color) !important;
+    border-radius: 8px !important;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+    background: var(--qb-primary-soft, #F3EDF8) !important;
+    color: var(--desk-primary) !important;
+}
+
+.navbar .avatar,
+.navbar .navbar-avatar img {
+    border: 2px solid rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+.page-head {
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0.96), rgba(247, 240, 252, 0.94)) !important;
+    border-bottom: 1px solid rgba(139, 106, 190, 0.2) !important;
+    box-shadow: 0 12px 30px -20px rgba(59, 47, 110, 0.55) !important;
+    backdrop-filter: blur(16px);
+}
+
+.page-head-content {
+    padding: 8px 22px !important;
+}
+
+.page-title .title-text,
+.page-head .title-text {
+    color: var(--desk-primary-deep) !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.4px !important;
+}
+
+.page-head .breadcrumb {
+    background: transparent !important;
+    padding: 0 !important;
+    margin-bottom: 2px !important;
+}
+
+.page-head .breadcrumb a,
+.page-head .breadcrumb li {
+    color: var(--desk-accent) !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+}
+
+.workspace-page,
+.desktop-page,
+.layout-main-section[data-page-route="Workspaces"] {
+    background-color: #FAF7FD !important;
+    background-image:
+        radial-gradient(circle at 10% 5%, rgba(200, 73, 154, 0.13), transparent 30%),
+        radial-gradient(circle at 92% 12%, rgba(91, 69, 168, 0.15), transparent 32%),
+        radial-gradient(rgba(91, 69, 168, 0.07) 1px, transparent 1px);
+    background-size: auto, auto, 22px 22px;
+}
+
+.widget-group .widget,
+.workspace-body .widget,
+.workspace-page .widget {
+    background: var(--desk-glass) !important;
+    border: 1px solid var(--desk-stroke) !important;
+    border-radius: var(--desk-radius) !important;
+    box-shadow: var(--desk-shadow) !important;
+    backdrop-filter: blur(12px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.widget-group .widget:hover,
+.workspace-body .widget:hover,
+.workspace-page .widget:hover {
+    transform: translateY(-4px);
+    border-color: rgba(200, 73, 154, 0.4) !important;
+    box-shadow: var(--desk-shadow-hover) !important;
+}
+
+.widget-head {
+    border-bottom-color: rgba(91, 69, 168, 0.12) !important;
+    padding: 14px 18px !important;
+}
+
+.widget-title {
+    color: var(--desk-primary-deep) !important;
+    font-weight: 700 !important;
+}
+
+.widget-subtitle {
+    color: #8A7FA0 !important;
+}
+
+.widget-group-title {
+    color: var(--desk-primary-deep) !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.2px !important;
+}
+
+.widget-group-title::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--desk-accent);
+    box-shadow: 0 0 0 4px rgba(200, 73, 154, 0.14);
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.shortcut-widget-box {
+    min-height: 92px !important;
+    padding: 18px !important;
+    border-radius: var(--desk-radius) !important;
+    background: linear-gradient(145deg, #FFFFFF, #F7F1FC) !important;
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 12px 28px -18px rgba(59, 47, 110, 0.55) !important;
+}
+
+.shortcut-widget-box:hover {
+    background: linear-gradient(145deg, #FFFFFF, #FDEFF8) !important;
+    border-color: rgba(200, 73, 154, 0.45) !important;
+}
+
+.shortcut-widget-box .widget-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: var(--desk-primary-deep) !important;
+}
+
+.shortcut-widget-box .indicator-pill {
+    background: rgba(91, 69, 168, 0.1) !important;
+    color: var(--desk-primary) !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+}
+
+.layout-side-section .sidebar-item-container .sidebar-item.active,
+.layout-side-section .sidebar-item.active {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.06)) !important;
+    border-radius: 12px !important;
+    box-shadow: inset 3px 0 0 #F9A8D4, 0 8px 18px -12px rgba(0, 0, 0, 0.4) !important;
+}

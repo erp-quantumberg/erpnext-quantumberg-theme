@@ -32,8 +32,14 @@ customizations for Frappe/ERPNext.
 
 **Desk theming**
 
-- Custom sidebar, workspace, button, and misc style overrides
+- Brand-purple/magenta sidebar with active-item glow
+- Gradient navbar with translucent search pill and avatar ring
+- Glass page head with bold title and accented breadcrumbs
+- Radial-gradient workspace backdrop with elevated, rounded widget and shortcut cards
+- Hover lift states for widgets and shortcuts
+- Matching dark theme (`html[data-theme="dark"]`) overrides
 - Custom workspace app icons
+- CSS files are versioned from their modification time, so changes are never hidden by browser caching
 
 ### Requirements
 
@@ -102,6 +108,41 @@ The following values are currently hardcoded in the app:
 
 To change any of these, update the corresponding constant or lookup in the app source
 and restart the server.
+
+### Desk CSS development
+
+The desk theme is plain CSS loaded through `app_include_css` in
+`custom_login/hooks.py`. The loaded files live in `custom_login/public/css/`:
+
+| File | Purpose |
+| --- | --- |
+| `variables.css` | Brand tokens (colors, gradients, radii, shadows, focus ring) |
+| `sidebar.css` | Sidebar colors, active item, section labels |
+| `workspace.css` | Workspace background and layout polish |
+| `desk_sidebar.css` | Desk-specific sidebar overrides |
+| `buttons.css` | Primary/secondary buttons and states |
+| `misc.css` | Navbar, page head, widget cards, shortcuts, lists, dialogs, dark polish |
+| `dark_theme.css` | `html[data-theme="dark"]` overrides |
+
+`hooks.py` computes a version query string (`?v=...`) from the modification time of those
+files. Each CSS edit changes the URL, so browsers fetch the new file without a manual
+hard refresh. Frappe caches hooks in process memory when developer mode is enabled, so
+restart the bench after editing `hooks.py` itself.
+
+Apply and verify changes from the bench root:
+
+```bash
+bench build --app custom_login
+bench --site test2.local clear-cache
+bench --site test2.local clear-website-cache
+bench start
+```
+
+Confirm the loaded URLs with:
+
+```bash
+env/bin/python -c "import frappe; frappe.init(site='test2.local', sites_path='sites'); frappe.connect(); print('\n'.join(frappe.get_hooks('app_include_css')))"
+```
 
 ### Contributing
 

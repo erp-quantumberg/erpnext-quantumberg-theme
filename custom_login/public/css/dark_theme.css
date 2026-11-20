@@ -568,3 +568,75 @@ html[data-theme="dark"] ::-webkit-scrollbar-thumb {
 html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
 	background: #4b3d72;
 }
+
+html[data-theme="dark"] .page-head {
+    background: linear-gradient(100deg, #191626, #211a30) !important;
+    border-bottom-color: #362c4d !important;
+    box-shadow: 0 12px 30px -20px rgba(0, 0, 0, 0.8) !important;
+}
+
+html[data-theme="dark"] .page-title .title-text,
+html[data-theme="dark"] .page-head .title-text {
+    color: #EDE7F6 !important;
+}
+
+html[data-theme="dark"] .page-head .breadcrumb a,
+html[data-theme="dark"] .page-head .breadcrumb li {
+    color: #F0ABFC !important;
+}
+
+html[data-theme="dark"] .workspace-page,
+html[data-theme="dark"] .desktop-page,
+html[data-theme="dark"] .layout-main-section[data-page-route="Workspaces"] {
+    background-color: #12101A !important;
+    background-image:
+        radial-gradient(circle at 10% 5%, rgba(200, 73, 154, 0.12), transparent 30%),
+        radial-gradient(circle at 92% 12%, rgba(91, 69, 168, 0.16), transparent 32%),
+        radial-gradient(rgba(196, 181, 253, 0.05) 1px, transparent 1px);
+    background-size: auto, auto, 22px 22px;
+}
+
+html[data-theme="dark"] .widget-group .widget,
+html[data-theme="dark"] .workspace-body .widget,
+html[data-theme="dark"] .workspace-page .widget,
+html[data-theme="dark"] .shortcut-widget-box {
+    background: rgba(28, 24, 40, 0.9) !important;
+    border-color: #3A3150 !important;
+    box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.85) !important;
+}
+
+html[data-theme="dark"] .widget-group .widget:hover,
+html[data-theme="dark"] .workspace-body .widget:hover,
+html[data-theme="dark"] .workspace-page .widget:hover,
+html[data-theme="dark"] .shortcut-widget-box:hover {
+    border-color: #8B5CF6 !important;
+    box-shadow: 0 24px 46px -20px rgba(139, 92, 246, 0.3) !important;
+}
+
+html[data-theme="dark"] .widget-title,
+html[data-theme="dark"] .widget-group-title,
+html[data-theme="dark"] .shortcut-widget-box .widget-title {
+    color: #EDE7F6 !important;
+}
+
+html[data-theme="dark"] .widget-head {
+    border-bottom-color: #3A3150 !important;
+}
+
+html[data-theme="dark"] .widget-group-title::before {
+    background: #F0ABFC;
+    box-shadow: 0 0 0 4px rgba(240, 171, 252, 0.14);
+}
+
+html[data-theme="dark"] .shortcut-widget-box {
+    background: linear-gradient(145deg, #1E1A2C, #241C34) !important;
+}
+
+html[data-theme="dark"] .shortcut-widget-box:hover {
+    background: linear-gradient(145deg, #241C34, #332044) !important;
+}
+
+html[data-theme="dark"] .shortcut-widget-box .indicator-pill {
+    background: rgba(139, 92, 246, 0.2) !important;
+    color: #E9D5FF !important;
+}
