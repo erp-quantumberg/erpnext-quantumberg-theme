@@ -54,7 +54,7 @@ You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 
 ```bash
 cd $PATH_TO_YOUR_BENCH
-bench get-app https://github.com/manoharkariyappa/quantumberg-theme
+bench get-app https://github.com/erp-quantumberg/erpnext-quantumberg-theme.git
 bench install-app custom_login
 ```
 
@@ -83,28 +83,28 @@ bench install-app frappe_whatsapp
 
 **Troubleshooting**
 
-| Symptom | Likely cause |
-| --- | --- |
-| "WhatsApp access token is not configured" | Account exists but the token field is empty |
-| "Phone ID is not configured" | Phone Number ID missing on the account |
-| `DoesNotExistError` for the account | Account name is not exactly `hrms` |
-| Meta returns HTTP 400 | Template missing/not approved, wrong name, or the URL button doesn't receive the OTP |
-| OTP never arrives | Check Error Log for an entry titled `WhatsApp Signup OTP - Meta API Error` — the status code and Meta response are logged there |
+| Symptom                                   | Likely cause                                                                                                                    |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| "WhatsApp access token is not configured" | Account exists but the token field is empty                                                                                     |
+| "Phone ID is not configured"              | Phone Number ID missing on the account                                                                                          |
+| `DoesNotExistError` for the account       | Account name is not exactly `hrms`                                                                                              |
+| Meta returns HTTP 400                     | Template missing/not approved, wrong name, or the URL button doesn't receive the OTP                                            |
+| OTP never arrives                         | Check Error Log for an entry titled `WhatsApp Signup OTP - Meta API Error` — the status code and Meta response are logged there |
 
 ### Configuration notes
 
 The following values are currently hardcoded in the app:
 
-| Value | Current setting |
-| --- | --- |
-| WhatsApp Account name | `hrms` |
-| Meta template name | `signup_otp` |
-| Template language | `en_US` |
-| OTP length | 6 digits |
-| OTP expiry | 5 minutes |
-| Max verification attempts | 5 |
-| Minimum password length | 8 characters |
-| API defaults | `https://graph.facebook.com`, `v24.0` |
+| Value                     | Current setting                       |
+| ------------------------- | ------------------------------------- |
+| WhatsApp Account name     | `hrms`                                |
+| Meta template name        | `signup_otp`                          |
+| Template language         | `en_US`                               |
+| OTP length                | 6 digits                              |
+| OTP expiry                | 5 minutes                             |
+| Max verification attempts | 5                                     |
+| Minimum password length   | 8 characters                          |
+| API defaults              | `https://graph.facebook.com`, `v24.0` |
 
 To change any of these, update the corresponding constant or lookup in the app source
 and restart the server.
@@ -114,15 +114,15 @@ and restart the server.
 The desk theme is plain CSS loaded through `app_include_css` in
 `custom_login/hooks.py`. The loaded files live in `custom_login/public/css/`:
 
-| File | Purpose |
-| --- | --- |
-| `variables.css` | Brand tokens (colors, gradients, radii, shadows, focus ring) |
-| `sidebar.css` | Sidebar colors, active item, section labels |
-| `workspace.css` | Workspace background and layout polish |
-| `desk_sidebar.css` | Desk-specific sidebar overrides |
-| `buttons.css` | Primary/secondary buttons and states |
-| `misc.css` | Navbar, page head, widget cards, shortcuts, lists, dialogs, dark polish |
-| `dark_theme.css` | `html[data-theme="dark"]` overrides |
+| File               | Purpose                                                                 |
+| ------------------ | ----------------------------------------------------------------------- |
+| `variables.css`    | Brand tokens (colors, gradients, radii, shadows, focus ring)            |
+| `sidebar.css`      | Sidebar colors, active item, section labels                             |
+| `workspace.css`    | Workspace background and layout polish                                  |
+| `desk_sidebar.css` | Desk-specific sidebar overrides                                         |
+| `buttons.css`      | Primary/secondary buttons and states                                    |
+| `misc.css`         | Navbar, page head, widget cards, shortcuts, lists, dialogs, dark polish |
+| `dark_theme.css`   | `html[data-theme="dark"]` overrides                                     |
 
 `hooks.py` computes a version query string (`?v=...`) from the modification time of those
 files. Each CSS edit changes the URL, so browsers fetch the new file without a manual
